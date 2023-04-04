@@ -3,7 +3,6 @@
 // ----------------------------------------------------------------------------------
 
 using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using KellermanSoftware.CompareNetObjects;
@@ -65,7 +64,7 @@ namespace Standard.AI.OpenAI.Tests.Unit.Services.Foundations.ImageGenerations
         }
 
         private static int GetRandomDateNumber() =>
-            new Random((int)Stopwatch.GetTimestamp()).Next(int.MinValue, int.MaxValue);  
+            new IntRange(min: int.MinValue, max: int.MaxValue).GetValue();
 
         private static string GetRandomString() =>
             new MnemonicString().GetValue();

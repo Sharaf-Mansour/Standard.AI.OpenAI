@@ -4,7 +4,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using Moq;
 using RESTFulSense.Exceptions;
@@ -105,7 +104,7 @@ namespace Standard.AI.OpenAI.Tests.Unit.Services.Foundations.AIModels
             new MnemonicString().GetValue();
 
         private static int GetRandomDateNumber() =>
-            new Random((int)Stopwatch.GetTimestamp()).Next(int.MinValue, int.MaxValue);   
+            Guid.NewGuid().GetHashCode();
 
         private static int GetRandomNumber() =>
             new IntRange(min: 2, max: 10).GetValue();
